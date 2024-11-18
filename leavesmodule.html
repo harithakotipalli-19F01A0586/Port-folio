@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leaves Module</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding: 20px;
+                background-color: #000; /* Black background */
+            }
+            h1 {
+                color: #fff; /* Adjust header text color for better contrast */
+                margin-bottom: 20px;
+            }
+            #image-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+                gap: 20px;
+                width: 100%;
+                max-width: 1200px;
+            }
+            .image-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                background-color: #fff; /* Add a background to make images stand out */
+            }
+            .image-card img {
+                width: 100%;
+                height: 300px; /* Adjust height for uniformity */
+                object-fit: contain; /* Ensure full visibility of the image */
+                padding: 10px; /* Add padding around images */
+            }
+        </style>
+    </head>
+<body>
+    <h1>Leaves Module</h1>
+    <div id="image-container"></div>
+
+    <script>
+        // Array of image filenames
+        const images = [
+            'Casual Leave toggle state.png',
+            'Customize policy – return policy – confirm.png', 'Customize policy – view history – export.png', 'Customize policy – view history.png', 'Customize policy.png',
+            'Leave type entitlement – hours.png', 'Leave type entitlement – Leave grant – days – 1.png', 'Leave type entitlement – Leave grant – days.png', 
+            'Leave type entitlement – Leave grant – reset days – 1.png', 'Leave type entitlement – Leave grant – reset days.png', 'Leave type entitlement – Leave grant-hours – 1.png', 
+            'Leave type entitlement – Leave grant-hours – 2.png', 'Leave type entitlement – Leave grant-hours – 3.png', 'Leave type entitlement – Leave grant-hours – 4.png', 
+            'Leave type entitlement – Leave grant-hours – 5.png', 
+            'Leave type entitlement – Leave grant-hours – 6.png', 'Leave type entitlement – Leave grant-hours – 7.png',
+            'Leave type entitlement – Leave grant-hours – 8.png', 'Leave type entitlement – Leave grant-hours – 9.png', 'Leave type entitlement – Leave grant-hours.png', 'Leave type entitlement – Leave grant-reset hours – 1.png',
+            'Leave type entitlement – Leave grant-reset hours.png', 'Leave type entitlement-days.png', 'Leaves module header calendar.png', 'Leaves module Leave type.png',
+            'Leaves module list view – 1.png', 'Leaves module list view – 2.png', 'Leaves module list view – 3.png', 'Leaves module list view – 4.png',
+            'Leaves module upcoming description – 1.png', 'Leaves module upcoming description – 2.png', 'Leaves module upcoming description – 4.png',
+            'Leaves module upcoming description – 6.png', 'Leaves module upcoming description.png'
+        ];
+
+        const imageFolder = './images/Leaves module/';
+        const imageContainer = document.getElementById('image-container');
+
+        // Loop to create image cards dynamically
+        images.forEach((filename, index) => {
+            const imageCard = document.createElement('div');
+            imageCard.classList.add('image-card');
+
+            const img = document.createElement('img');
+            img.src = `${imageFolder}${filename}`;
+            img.alt = `Image ${index + 1}`;
+            img.onerror = () => console.error(`Failed to load image: ${img.src}`);
+
+            imageCard.appendChild(img);
+            imageContainer.appendChild(imageCard);
+        });
+    </script>
+</body>
+</html>
