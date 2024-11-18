@@ -229,25 +229,31 @@
 				height: 100%;
 				border-radius: 50%;
 				background: conic-gradient(
-					var(--color) var(--progress), 
-					gray var(--progress) 360deg
+					var(--color, gray) var(--progress, 0%), 
+					gray var(--progress, 0%) 360deg
 				);
 				transform: rotate(-90deg);
 			}
 	
 			/* Color conditions based on percentage */
-			.progress-ring[data-progress*="90"], 
-			.progress-ring[data-progress*="85"] {
+			.progress-ring[data-progress="90"] {
 				--color: green;
 			}
 	
-			.progress-ring[data-progress*="35"], 
-			.progress-ring[data-progress*="50"] {
+			.progress-ring[data-progress="85"] {
+				--color: green;
+			}
+	
+			.progress-ring[data-progress="50"], 
+			.progress-ring[data-progress="35"] {
 				--color: orange;
 			}
 	
-			.progress-ring[data-progress*="20"], 
-			.progress-ring[data-progress*="15"] {
+			.progress-ring[data-progress="40"] {
+				--color: blue;
+			}
+	
+			.progress-ring[data-progress="20"] {
 				--color: red;
 			}
 	
@@ -332,10 +338,10 @@
 				<div class="col-md-4 animate-box">
 					<div class="skill-item">
 						<div class="progress-circle">
-							<div class="progress-ring" style="--progress: 20%;" data-progress="20"></div>
-							<div class="progress-value">20%</div>
+							<div class="progress-ring" style="--progress: 35%;" data-progress="35"></div>
+							<div class="progress-value">35%</div>
 						</div>
-						<h3 class="skill-title">Photoshop</h3>
+						<h3 class="skill-title">Adobe Illustrator</h3>
 					</div>
 				</div>
 				<div class="col-md-4 animate-box">
